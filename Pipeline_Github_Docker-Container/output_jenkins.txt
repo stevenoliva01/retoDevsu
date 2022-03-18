@@ -1,0 +1,195 @@
+Lanzada por el usuario Steven Alexander Oliva Ayala
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins  in C:\Windows\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Tool Install)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Cloning our Git)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] git
+The recommended git tool is: NONE
+No credentials specified
+ > git.exe rev-parse --resolve-git-dir C:\Windows\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer\.git # timeout=10
+Fetching changes from the remote Git repository
+ > git.exe config remote.origin.url https://github.com/stevenoliva01/retoDevsu.git # timeout=10
+Fetching upstream changes from https://github.com/stevenoliva01/retoDevsu.git
+ > git.exe --version # timeout=10
+ > git --version # 'git version 2.32.0.windows.1'
+ > git.exe fetch --tags --force --progress -- https://github.com/stevenoliva01/retoDevsu.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git.exe rev-parse "refs/remotes/origin/master^{commit}" # timeout=10
+Checking out Revision a212edad65e61382deab1aba3cf67cd39347eea3 (refs/remotes/origin/master)
+ > git.exe config core.sparsecheckout # timeout=10
+ > git.exe checkout -f a212edad65e61382deab1aba3cf67cd39347eea3 # timeout=10
+ > git.exe branch -a -v --no-abbrev # timeout=10
+ > git.exe branch -D master # timeout=10
+ > git.exe checkout -b master a212edad65e61382deab1aba3cf67cd39347eea3 # timeout=10
+Commit message: "Updating gitignore"
+ > git.exe rev-list --no-walk a212edad65e61382deab1aba3cf67cd39347eea3 # timeout=10
+[Pipeline] withMaven
+[withMaven] Options: []
+[withMaven] Available options: 
+[withMaven] using JDK installation provided by the build agent
+$ where mvn.cmd
+[withMaven] using Maven installation provided by the build agent with executable D:\Steven\Flohouse\DesplegarFlohouse\1.0\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin\mvn.cmd
+[Pipeline] {
+[Pipeline] bat
+
+C:\Windows\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer>mvn clean package 
+----- withMaven Wrapper script -----
+Picked up JAVA_TOOL_OPTIONS: -Dmaven.ext.class.path="C:\Windows\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer@tmp\withMaven7de0dbd4\pipeline-maven-spy.jar" -Dorg.jenkinsci.plugins.pipeline.maven.reportsFolder="C:\Windows\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer@tmp\withMaven7de0dbd4" 
+Apache Maven 3.6.1 (d66c9c0b3152b2e69ee9bac180bb8fcc8e6af555; 2019-04-04T14:00:29-05:00)
+Maven home: D:\Steven\Flohouse\DesplegarFlohouse\1.0\apache-maven-3.6.1-bin\apache-maven-3.6.1\bin\..
+Java version: 11.0.8, vendor: Oracle Corporation, runtime: D:\Program Files\Java\jdk-11.0.8
+Default locale: es_419, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+[INFO] [jenkins-event-spy] Generate C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer@tmp\withMaven7de0dbd4\maven-spy-20220318-122939-21011784526677970717950.log.tmp ...
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< orbartal:example.smallest >----------------------
+[INFO] Building example.smallest 0.0.1-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:3.0.0:clean (default-clean) @ example.smallest ---
+[INFO] Deleting C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer\target
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ example.smallest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] Copying 0 resource
+[INFO] Copying 1 resource
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:compile (default-compile) @ example.smallest ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 2 source files to C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ example.smallest ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.7.0:testCompile (default-testCompile) @ example.smallest ---
+[INFO] No sources to compile
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.21.0:test (default-test) @ example.smallest ---
+[INFO] No tests to run.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ example.smallest ---
+[INFO] Building jar: C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer\target\example.smallest-0.0.1-SNAPSHOT.jar
+[INFO] 
+[INFO] --- spring-boot-maven-plugin:2.0.5.RELEASE:repackage (default) @ example.smallest ---
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  9.389 s
+[INFO] Finished at: 2022-03-18T12:29:49-05:00
+[INFO] ------------------------------------------------------------------------
+[INFO] [jenkins-event-spy] Generated C:\Windows\System32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer@tmp\withMaven7de0dbd4\maven-spy-20220318-122939-21011784526677970717950.log
+[Pipeline] }
+[withMaven] artifactsPublisher - Archive artifact pom.xml under orbartal\example.smallest\0.0.1-SNAPSHOT\example.smallest-0.0.1-SNAPSHOT.pom
+[withMaven] artifactsPublisher - Archive artifact target\example.smallest-0.0.1-SNAPSHOT.jar under orbartal\example.smallest\0.0.1-SNAPSHOT\example.smallest-0.0.1-SNAPSHOT.jar
+[withMaven] junitPublisher - Archive test results for Maven artifact orbartal:example.smallest:jar:0.0.1-SNAPSHOT generated by maven-surefire-plugin:test (default-test): target\surefire-reports\*.xml
+[withMaven] junitPublisher - Jenkins JUnit Attachments Plugin not found, can't publish test attachments.Grabando resultados de tests
+No se encontraron ficheros con resultados de tests. ¿Hay algun error en la configuración?
+Ninguno de los informes de tests contiene resultados
+[withMaven] Jenkins Task Scanner Plugin not found, don't display results of source code scanning for 'TODO' and 'FIXME' in pipeline screen.
+[withMaven] Publishers: Pipeline Graph Publisher: 2 ms, Generated Artifacts Publisher: 164 ms, Junit Publisher: 13 ms, Open Task Scanner Publisher: 1 ms
+[Pipeline] // withMaven
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Building our image)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] script
+[Pipeline] {
+[Pipeline] isUnix
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\Windows\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer>docker build -t "stevenoliva/reto-devsu:7" . 
+#1 [internal] load build definition from Dockerfile
+#1 sha256:e4568b0703f0679d458031619e3d42a6c703be1d6b8651988947956470fecdb8
+#1 transferring dockerfile: 31B done
+#1 DONE 0.0s
+
+#2 [internal] load .dockerignore
+#2 sha256:16f17f74bd32196ad4ec1d21b0ed7273120cf6700ab2505aedec1bd2ae125cb5
+#2 transferring context: 2B done
+#2 DONE 0.0s
+
+#3 [internal] load metadata for docker.io/library/openjdk:8-jdk-alpine
+#3 sha256:d758512ecc4a4d978b274098688e884e061155d4c36c119bf2fd83b966ae4841
+#3 DONE 0.7s
+
+#4 [1/2] FROM docker.io/library/openjdk:8-jdk-alpine@sha256:94792824df2df33402f201713f932b58cb9de94a0cd524164a0f2283343547b3
+#4 sha256:f5a5edb6dc48053475846d1bb3576add106c9df1a4f090751ebf7e511dc4dc49
+#4 DONE 0.0s
+
+#5 [internal] load build context
+#5 sha256:600c60501153220a87e59d8dbfe6a09850f2aad13c688a049651d0cac51bed3b
+#5 transferring context: 17.58MB 0.4s done
+#5 DONE 0.4s
+
+#4 [1/2] FROM docker.io/library/openjdk:8-jdk-alpine@sha256:94792824df2df33402f201713f932b58cb9de94a0cd524164a0f2283343547b3
+#4 sha256:f5a5edb6dc48053475846d1bb3576add106c9df1a4f090751ebf7e511dc4dc49
+#4 CACHED
+
+#6 [2/2] COPY target/*.jar app.jar
+#6 sha256:a03e46f2a1c7ed7d88d3591e140aa577725e114813bf601ffff14c795d48ae0e
+#6 DONE 0.6s
+
+#7 exporting to image
+#7 sha256:e8c613e07b0b7ff33893b694f7759a10d42e180f2b4dc349fb57dc6b71dcab00
+#7 exporting layers
+#7 exporting layers 0.4s done
+#7 writing image sha256:6e05c73d07fccc571b3beaba03c4e5e941476a677a86bcd43913971211af7a74 0.0s done
+#7 naming to docker.io/stevenoliva/reto-devsu:7 0.0s done
+#7 DONE 0.6s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how to fix them
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // script
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Deploy our image in container)
+[Pipeline] tool
+[Pipeline] envVarsForTool
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] bat
+
+C:\Windows\system32\config\systemprofile\AppData\Local\Jenkins\.jenkins\workspace\Reto-Devsu-GitHub-Jenkins-DockerContainer>docker run -p 9098:9092 -d stevenoliva/reto-devsu:7 
+b327dd3a9b6f8e9d15c7aa37fae470f9e067a701070a9e22239e0d46c93fa47f
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
